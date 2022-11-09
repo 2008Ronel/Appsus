@@ -7,10 +7,10 @@ export default {
             <ul>
                 <li v-for="email in emails" :key="email.id" class="emailDiv">
                     <email-preview :email="email"/>
-                    <!-- <section class="actions">
-                        <button @click="remove(book.id)">x</button> 
-                        <router-link :to="'/book/'+book.id"><button>Details</button></router-link> -->
-                    <!-- </section> --> 
+                    <section class="actions">
+                        <button @click="remove(email.id)">x</button> 
+                        <router-link :to="'/misterEmail/'+email.id"><button>Show Email</button></router-link>
+                    </section> 
                 </li>
             </ul>
         </section> 

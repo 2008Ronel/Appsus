@@ -34,7 +34,17 @@ body{
 
 /*****************EMAIL PREVIEW*****************/
 
+.actions{
+  display: none;
+
+}
+
+.emailDiv:hover>.actions{
+  display: block;
+}
+
 .email-preview{
+  cursor: pointer;
   padding-top: 1rem;
   padding-inline: 10px;
   height: 50px;
@@ -52,4 +62,34 @@ body{
 .emailBody{
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/*****************EMAIL DETAILS*****************/
+
+.email-container{
+  width: 1060px;
+  margin-top: 7rem;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1rem;
+}
+
+.email-container h2{
+  color: rgb(54, 54, 54);
+  margin-inline-start:1.5rem;
+}
+
+.emailAdress{
+  font-size: 0.8rem;
+}
+
+.email-header{
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 2rem;
+  padding-top: 1rem;
+  height: 3rem;
+  background-color: rgb(215, 215, 215);
+  border-top-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
