@@ -3,7 +3,11 @@ import emailPreview from './email-preview.cmp.js'
 export default {
     props: ['emails'],
     template: `
+        <section class="email-actions">
+            <button class="composeBtn">Compose</button>
+        </section>
         <section v-if="emails" class="email-list">
+        <h3 class="read-messages">Read messages: {{isRead}}</h3>
             <ul>
                 <li v-for="email in emails" :key="email.id" class="emailDiv">
                     <email-preview :email="email"/>
@@ -14,17 +18,21 @@ export default {
                 </li>
             </ul>
         </section> 
+        <h1 v-else class="loadingState"  >Loading ...</h1> 
     `,
-    created() {
-        console.log(this.emails)
+    created() {  
+    },
+    mounted(){
+        this.emails.forEach(email =>{
+            if (email.isRead) this.isRead+=1
+        })
     },
     data() {
         return {
-           
+            isRead:0
         }
     },
     methods: {
-       
     },
     components: {
       emailPreview 

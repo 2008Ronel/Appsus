@@ -6,6 +6,7 @@ body{
 
 *{
   font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0.3px;
 }
 
 /****************HELPERS************************/
@@ -14,6 +15,15 @@ body{
   display:flex;
 }
 
+.loadingState{
+  position: absolute;
+  top: 50%; right: 50%;
+  transform: translate(50%,-50%);
+  background-color: white;
+  padding: 10px 20px;
+  border: 1px black solid;
+  border-radius: 1rem;
+}
 
 /*****************EMAIL LIST*****************/
 
@@ -33,6 +43,10 @@ body{
 }
 
 /*****************EMAIL PREVIEW*****************/
+.read-messages{
+  padding-inline-start:10rem ;
+  color:black;
+}
 
 .actions{
   display: none;
@@ -57,6 +71,9 @@ body{
 .emailBody,.emailSubject,.emailSender{
   white-space: nowrap;
   text-overflow: clip;
+}
+.emailSender{
+  color: rgb(51, 51, 51);
 }
 
 .emailBody{
@@ -88,6 +105,8 @@ body{
 .email-container h2{
   color: rgb(54, 54, 54);
   margin-inline-start:1.5rem;
+  text-decoration: underline;
+  letter-spacing: 0.4px;
 }
 
 .emailAdress{
@@ -104,4 +123,19 @@ body{
   border-top-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
   border-bottom: black solid 1px;
+}
+
+.email-details-backBtn{
+  background-color: rgb(88, 175, 225);
+  padding: 10px 20px;
+  border: 1px solid black;
+  border-bottom-left-radius:0.5rem ;
+  color: rgb(0, 0, 0);
+  transition: all 0.2s;
+  font-weight: bold;
+}
+
+.email-details-backBtn:hover{
+  background-color: rgb(140, 197, 231);
+
 }

@@ -12,8 +12,9 @@ export default {
           <p> {{email.body}}</p>
         </div>
         </section>
+        <router-link to="/misterEmail" ><button class="email-details-backBtn">Back</button></router-link>
       </section>
-      <!-- <h1 v-else >Loading ...</h1> -->
+      <h1 class="loadingState" v-else >Loading ...</h1> 
   `, data() {
     return {
       email:null,
@@ -28,8 +29,9 @@ export default {
     loadEmail(){
       emailService.get(this.emailId)
        .then(email=> {
+        email.isRead = true
+        emailService.replace(email)
         this.email = email
-        console.log(email)
       })
        .catch(err => console.log(err))
     }

@@ -4,8 +4,8 @@ export default {
     template: `
         <section  v-if="emails" class="email-app">
         <h1 class='pageTitle'>Jmail</h1>
-            <email-list
-            :emails = "emails"/>
+        <email-list
+        :emails = "emails"/>
         </section>
     `,
     data() {
