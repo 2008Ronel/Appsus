@@ -25,8 +25,8 @@ function get(emailId) {
   return storageService.get(EMAILS_KEY, emailId)
 }
 
-function replace(emailId) {
-  return storageService.put(EMAILS_KEY, emailId)
+function replace(email) {
+  return storageService.put(EMAILS_KEY, email)
 }
 function remove(emailId) {
   return storageService.remove(EMAILS_KEY, emailId)

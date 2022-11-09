@@ -14,6 +14,7 @@ export default {
                 </li>
             </ul>
         </section> 
+        <h1 v-else class="loadingState"  >Loading ...</h1> 
     `,
     created() {
         console.log(this.emails)
