@@ -6,6 +6,7 @@ body{
 
 *{
   font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0.3px;
 }
 
 /****************HELPERS************************/
@@ -67,7 +68,9 @@ body{
   white-space: nowrap;
   text-overflow: clip;
 }
-
+.emailSender{
+  color: rgb(51, 51, 51);
+}
 .emailBody{
   overflow: hidden;
   text-overflow: ellipsis;
@@ -97,6 +100,8 @@ body{
 .email-container h2{
   color: rgb(54, 54, 54);
   margin-inline-start:1.5rem;
+  text-decoration: underline;
+  letter-spacing: 0.4px;
 }
 
 .emailAdress{
