@@ -1,7 +1,7 @@
 import homePage from './views/app-home.cmp.js'
 import aboutPage from './views/app-about.cmp.js'
 import misterEmail from './views/mister-email.cmp.js'
-
+import missKeep from './views/keep-app.cmp.js'
 const { createRouter, createWebHashHistory } = VueRouter
 
 const routerOptions = {
@@ -15,10 +15,10 @@ const routerOptions = {
 			path: '/about',
 			component: aboutPage,
 		},
-		// {
-		// 	path: '/missKeep',
-		// 	component: ,
-		// },
+		{
+			path: '/missKeep',
+			component: missKeep,
+		},
 		{
 			path: '/misterEmail',
 			component: misterEmail,

@@ -9,6 +9,7 @@ export default {
                 </div>
                 <div>
                 <router-link to="/misterEmail"><button>MisterEmail</button></router-link>
+                <router-link to="/missKeep"><button>MissKeep</button></router-link>
                 </div>
             </nav>
         </header>
