@@ -12,6 +12,7 @@ export default {
           <p> {{email.body}}</p>
         </div>
         </section>
+        <router-link to="/misterEmail" ><button class="email-details-backBtn">Back</button></router-link>
       </section>
       <h1 class="loadingState" v-else >Loading ...</h1> 
   `, data() {

@@ -124,3 +124,18 @@ body{
   border-bottom-right-radius: 1rem;
   border-bottom: black solid 1px;
 }
+
+.email-details-backBtn{
+  background-color: rgb(88, 175, 225);
+  padding: 10px 20px;
+  border: 1px solid black;
+  border-bottom-left-radius:0.5rem ;
+  color: rgb(0, 0, 0);
+  transition: all 0.2s;
+  font-weight: bold;
+}
+
+.email-details-backBtn:hover{
+  background-color: rgb(140, 197, 231);
+
+}

@@ -3,6 +3,9 @@ import emailPreview from './email-preview.cmp.js'
 export default {
     props: ['emails'],
     template: `
+        <section class="email-actions">
+            <button class="composeBtn">Compose</button>
+        </section>
         <section v-if="emails" class="email-list">
         <h3 class="read-messages">Read messages: {{isRead}}</h3>
             <ul>
