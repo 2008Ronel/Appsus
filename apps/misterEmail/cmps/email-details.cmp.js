@@ -9,7 +9,7 @@ export default {
         <h4>{{sentAt}}</h4>
         </div>
         <div class="emailContent">
-
+          <p> {{email.body}}</p>
         </div>
         </section>
       </section>

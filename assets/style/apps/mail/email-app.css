@@ -74,6 +74,17 @@ body{
   border-radius: 1rem;
 }
 
+.email-details{
+  background-color: white;
+  height: 40vh;
+  border-top-left-radius: 1rem;
+  border: 1px solid black;
+}
+
+.emailContent p{
+  padding: 1rem;
+  color: black;
+}
 .email-container h2{
   color: rgb(54, 54, 54);
   margin-inline-start:1.5rem;
@@ -92,4 +103,5 @@ body{
   background-color: rgb(215, 215, 215);
   border-top-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
+  border-bottom: black solid 1px;
 }
