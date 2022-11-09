@@ -1,6 +1,6 @@
 export default {
 	template: `
-        <section class="keepApp">
+        <section v-if="emails" class="keep-app">
             <h1>Keep App</h1>
         </section>
     `,
