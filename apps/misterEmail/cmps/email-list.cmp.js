@@ -14,7 +14,6 @@ export default {
                 </li>
             </ul>
         </section> 
-        <p>email list</p>
     `,
     created() {
         console.log(this.emails)
