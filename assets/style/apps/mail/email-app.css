@@ -43,6 +43,10 @@ body{
 }
 
 /*****************EMAIL PREVIEW*****************/
+.read-messages{
+  padding-inline-start:10rem ;
+  color:black;
+}
 
 .actions{
   display: none;
@@ -71,6 +75,7 @@ body{
 .emailSender{
   color: rgb(51, 51, 51);
 }
+
 .emailBody{
   overflow: hidden;
   text-overflow: ellipsis;
