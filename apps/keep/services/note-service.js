@@ -7,11 +7,11 @@ _createKeep();
 
 export const noteService = {
   query,
-  // removeKeep,
+  removeKeep,
   updateKeep,
   _createKeep,
   getEmptyNote,
-  remove,
+  // remove,
 };
 
 function query() {
@@ -23,11 +23,13 @@ function updateKeep(newKeep) {
   storageService.put(KEEPS_KEY, keeps);
 }
 
-function remove(keepId) {
-  const keeps = query();
-  const idx = keeps.findIndex((keep) => keep.id === keepId);
-  keeps.splice(idx, 1);
-  storageService.post(KEEPS_KEY, keeps);
+function removeKeep(keepId) {
+  const keep = query().then((keeps) => {
+    const idx = keeps.findIndex((keep) => keep.id === keepId);
+    keeps.splice(idx, 1);
+    storageService.post(KEEPS_KEY, keeps);
+    return keeps;
+  });
 }
 
 function _createKeep() {

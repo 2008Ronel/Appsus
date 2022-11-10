@@ -1,13 +1,12 @@
 import keepPreview from '../cmps/note-preview.cmp.js';
-
 export default {
   props: ['keeps'],
   template: `
     <section>
         <div class="keeps-list">
-            <div v-for="keep in keeps" :key="keep.id">
+            <div v-for="keep in keeps" :key="keep.id" class="keep">
               <keep-preview :keep="keep"/>
-              <button @click="remove(keep.id)">x</button>
+              <button @click="removeKeep">x</button>
 
 </div>
 </div>
@@ -17,7 +16,7 @@ export default {
     return {};
   },
   methods: {
-    remove(keepId) {
+    removeKeep(keepId) {
       this.$emit('remove', keepId);
       // console.log('aaa');
       // console.log(keepId);

@@ -12,5 +12,11 @@ export default {
     return {};
   },
 
+  methods: {
+    removeKeep() {
+      this.$emit('remove', this.keep.id);
+    },
+  },
+
   components: {},
 };
