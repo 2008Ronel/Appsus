@@ -4,11 +4,11 @@ export default {
   props: ['keeps'],
   template: `
     <section>
-        <ul class="keeps-list">
-            <li v-for="keep in keeps" :key="keep.id">
+        <div class="keeps-list">
+            <div v-for="keep in keeps" :key="keep.id">
                 <keep-preview :keep="keep"/>
-            </li>
-        </ul>
+</div>
+</div>
     </section>
 `,
   data() {
