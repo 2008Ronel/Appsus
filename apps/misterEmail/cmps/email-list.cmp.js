@@ -7,7 +7,7 @@ export default {
         <h3 class="read-messages">Read messages: {{isRead}}</h3>
             <ul>
                 <li v-for="email in emails" :key="email.id" class="emailDiv flex-box">
-                    <email-preview :email="email"/>
+                    <email-preview @starEmail='starEmail' :email="email"/>
                     <section class="actions">
                         <router-link :to="'/misterEmail/'+email.id"><button>📁</button></router-link>
                         <button @click="remove(email.id)">🗑️</button> 
@@ -30,6 +30,9 @@ export default {
         }
     },
     methods: {
+        starEmail(emailId){
+            this.$emit('starEmail',emailId)
+        },
         remove(emailId){
             this.$emit('remove',emailId)
         }

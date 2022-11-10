@@ -5,6 +5,7 @@
      "subject": "Ronel invited you to 2008Ronel/Appsus",
       "body": "You can accept or decline this invitation. You can also head over to check out the repository or visit Ronel to learn a bit more about them.This invitation will expire in 7 days.", 
       "isRead": false,
+      "isStarred":false,
       "sentAt" : 1551133930594,
       "from": "Ronel@gmail.com", 
       "to": "user@appsus.com"
@@ -15,6 +16,7 @@
      "subject": "How does your gym handle heavier weights when members don't re-rack them?",
       "body": "My gym got clever. They tried notices, they tried signs, they tried having a “Trainer” on duty to ask folks to put them back. Nothing really worked. Then, they got clever....", 
       "isRead": false,
+      "isStarred":false,
       "sentAt" : 1551133930594,
       "from": "QuoraDigest@quora.com", 
       "to": "user@appsus.com"
@@ -25,6 +27,7 @@
      "subject": "Musk vs. the Twitteratti",
       "body": "One of the things that's “on the ballot” today in the U.S., and in other countries around the world, is freedom of speech.", 
       "isRead": false,
+      "isStarred":false,
       "sentAt" : 1551133930594,
       "from": "feedback@e.brownstoneresearch.com", 
       "to": "user@appsus.com"
@@ -35,6 +38,7 @@
      "subject": "How beginners can make $10K/month on Amazon",
       "body": "Would love to catch up sometimes", 
       "isRead": false,
+      "isStarred":false,
       "sentAt" : 1551133930594,
       "from": "momo@momo.com", 
       "to": "user@appsus.com"
@@ -45,6 +49,7 @@
      "subject": "Miss you!",
       "body": "Hi there, Silita Amiri's unique webinar is coming soon! You have a chance to get a list of five hot products to resell right away. Silita will reveal numerous secrets that helped her become an accomplished seven-figure seller on Amazon at a young age.", 
       "isRead": false,
+      "isStarred":false,
       "sentAt" : 1551133930594,
       "from": "support@amzscout.net", 
       "to": "user@appsus.com"
@@ -55,6 +60,7 @@
      "subject": "Thank you for your Steam purchase!",
       "body": "Thank you for your recent transaction on Steam.", 
       "isRead": false,
+      "isStarred":false,
       "sentAt" : 1551133930594,
       "from": "noreply@steampowered.com", 
       "to": "user@appsus.com"
@@ -65,6 +71,7 @@
      "subject": "OpenWeatherMap Account confirmation",
       "body": "Thank you for choosing OpenWeatherMap!Please confirm your email address to help us ensure your account is always ", 
       "isRead": false,
+      "isStarred":false,
       "sentAt" : 1551133930594,
       "from": "robot2@openweathermap.org", 
       "to": "user@appsus.com"
@@ -75,6 +82,7 @@
      "subject": "Account confirmation: Your Google Cloud free trial",
       "body": "Welcome to Google Cloud.Learn the fundamentals with this tutorial - and see what else you can do for free on Google Cloud with our Always Free tier", 
       "isRead": false,
+      "isStarred":false,
       "sentAt" : 1551133930594,
       "from": "CloudPlatform-noreply@google.com", 
       "to": "user@appsus.com"
@@ -85,6 +93,7 @@
      "subject": "Your balance for October",
       "body": "October is over. Here's what's up in your account on Splitwise:", 
       "isRead": false,
+      "isStarred":false,
       "sentAt" : 1551133930594,
       "from": "hello@splitwise.com", 
       "to": "user@appsus.com"
@@ -95,6 +104,7 @@
      "subject": "IBKR Clients Have Access to the Lowest Margin Rates",
       "body": "IBKR Clients Have Access to the Lowest Margin Rates", 
       "isRead": false,
+      "isStarred":false,
       "sentAt" : 1551133930594,
       "from": "noresponse@interactivebrokers.com", 
       "to": "user@appsus.com"
@@ -105,6 +115,7 @@
      "subject": "Hadas and 56 others made changes in your shared folders",
       "body": "Follow specific folders and get focused updates, Follow folders to get more detailed insights, reported instantly or once per day. Choose a folder to follow", 
       "isRead": false,
+      "isStarred":false,
       "sentAt" : 1551133930594,
       "from": "no-reply@dropbox.com", 
       "to": "user@appsus.com"
@@ -115,6 +126,7 @@
      "subject": "Duo here! Time for a quick lesson?",
       "body": "Daily Spanish Reminder- Hi! Keep Duo happy! Remember that learning a language requires a little bit of practice every day.", 
       "isRead": false,
+      "isStarred":false,
       "sentAt" : 1551133930594,
       "from": "hello@duolingo.com", 
       "to": "user@appsus.com"
