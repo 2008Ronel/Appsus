@@ -20,3 +20,7 @@
 body {
   background-color: rgb(192, 181, 181);
 }
+
+li {
+  list-style: none;
+}

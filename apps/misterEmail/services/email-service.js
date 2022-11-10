@@ -1,13 +1,14 @@
-import emailStart from '../data/emails.json' assert {type: 'json'}
-import { utilService } from '../../../services/util.service.js'
-import { storageService } from '../../../services/async-storage.service.js'
+import emailStart from '../data/emails.json' assert { type: 'json' };
+import { utilService } from '../../../services/util.service.js';
+import { storageService } from '../../../services/async-storage.service.js';
 
 const loggedinUser = {
-  email: 'user@appsus.com', fullname: 'Mahatma Appsus'
-}
+  email: 'user@appsus.com',
+  fullname: 'Mahatma Appsus',
+};
 
-const EMAILS_KEY = 'Emails'
-_createEmails()
+const EMAILS_KEY = 'Emails';
+_createEmails();
 
 export const emailService = {
   replace,
@@ -15,28 +16,28 @@ export const emailService = {
   query,
   remove,
   save,
-}
+};
 
 function query() {
-  return storageService.query(EMAILS_KEY)
+  return storageService.query(EMAILS_KEY);
 }
 
 function get(emailId) {
-  return storageService.get(EMAILS_KEY, emailId)
+  return storageService.get(EMAILS_KEY, emailId);
 }
 
-function replace(email) {
-  return storageService.put(EMAILS_KEY, email)
+function replace(emailId) {
+  return storageService.put(EMAILS_KEY, emailId);
 }
 function remove(emailId) {
-  return storageService.remove(EMAILS_KEY, emailId)
+  return storageService.remove(EMAILS_KEY, emailId);
 }
 
 function save(email) {
   if (email.id) {
-    return storageService.put(EMAILS_KEY, email)
+    return storageService.put(EMAILS_KEY, email);
   } else {
-    return storageService.post(EMAILS_KEY, email)
+    return storageService.post(EMAILS_KEY, email);
   }
 }
 
@@ -95,14 +96,10 @@ function save(email) {
 // }
 
 function _createEmails() {
-  let emails = utilService.loadFromStorage(EMAILS_KEY)
+  let emails = utilService.loadFromStorage(EMAILS_KEY);
   if (!emails || !emails.length) {
-    emails = emailStart
-    utilService.saveToStorage(EMAILS_KEY, emails)
+    emails = emailStart;
+    utilService.saveToStorage(EMAILS_KEY, emails);
   }
-  console.log('Books To Render', emails)
-  return emails
+  return emails;
 }
-
-
-
