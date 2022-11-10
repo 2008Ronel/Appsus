@@ -17,9 +17,7 @@
 @import 'apps/mail/email-app.css';
 @import 'apps/note/note-app.css';
 
-body {
-  background-color: rgb(192, 181, 181);
-}
+
 
 li {
   list-style: none;

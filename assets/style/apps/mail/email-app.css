@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: white;
 }
 
 * {
@@ -15,7 +16,6 @@ body {
 }
 
 /****************HELPERS************************/
-
 .flex-box {
   display: flex;
 }
@@ -41,7 +41,7 @@ body {
   padding-inline-start: 1rem;
   position: absolute;
   top: 10rem;
-  right: 10rem;
+  right: 17.3rem;
   height: 2.3rem;
   width: 450px;
   border: none;
@@ -214,6 +214,7 @@ body {
   position: absolute;
   right: 0.2rem;
   flex-direction: column;
+  top: 15rem;
 }
 
 
@@ -222,7 +223,7 @@ body {
   border: none;
   position: absolute;
   right: 0;
-  top: 12rem;
+  top: 12.3rem;
   font-size: 20px;
   opacity: 0.85;
   transition: all 0.3s;
@@ -254,4 +255,49 @@ body {
   box-shadow: -1px -19px 10px -22px rgba(0, 0, 0, 0.75) inset;
   -webkit-box-shadow: -1px -19px 10px -22px rgba(0, 0, 0, 0.75) inset;
   -moz-box-shadow: -1px -19px 10px -22px rgba(0, 0, 0, 0.75) inset;
+}
+
+.composeBtn {
+  position: absolute;
+  align-items: center;
+  right: 0.3rem;
+  padding: 0.8rem 2rem;
+  padding-inline-start: 2.4rem;
+  top: 9.5rem;
+  font-size: 14px;
+  border-radius: 0.4rem;
+  border: none;
+  background-color: rgb(225, 244, 247);
+  transition: all 0.18s;
+}
+
+.composeBtn:hover {
+  background-color: rgb(209, 240, 245);
+  box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.75);
+}
+
+.composeBtn img {
+  margin-bottom: 0.5rem;
+  width: 1.2rem;
+  margin-inline-start: 0.3rem;
+}
+
+.star {
+  visibility: hidden;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.star:before {
+  content: "\2605";
+  position: absolute;
+  visibility: visible;
+}
+
+.star:checked:before {
+  content: "\2606";
+  position: absolute;
+  color: yellow;
 }
