@@ -5,7 +5,7 @@ body {
 }
 
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'roboto-medium';
   letter-spacing: 0.3px;
 }
 
@@ -74,10 +74,10 @@ body {
 }
 
 .actions {
-  display: none;
+  display: inline-block;
+  opacity: 0;
   position: relative;
   right: 6rem;
-  opacity: 0.6;
 }
 
 .actions button {
@@ -91,7 +91,8 @@ body {
 }
 
 .emailDiv:hover>.actions {
-  display: block;
+  display: inline-block;
+  opacity: 0.6;
 }
 
 /* .email-preview {
@@ -108,10 +109,12 @@ body {
 .email-preview {
   display: flex;
   gap: 10px;
+  align-items: center;
   width: 80vw;
-  padding-top: 1rem;
+  padding-block: 0;
   padding-inline-start: 1rem;
   padding-inline-end: 4rem;
+  border-bottom: 1px solid rgb(210, 210, 210);
 }
 
 .emailBody,
@@ -119,15 +122,29 @@ body {
 .emailSender {
   white-space: nowrap;
   text-overflow: clip;
+  margin: 0;
 }
+
 
 .emailSender {
   color: rgb(51, 51, 51);
+  padding-top: 0.2rem;
+  font-size: 15px;
+  min-width: 160px;
+  font-family: 'roboto-light';
 }
 
+.emailSubject {
+  font-size: 13px;
+}
+
+
 .emailBody {
+  font-size: 12px;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-weight: 100;
+  font-family: 'roboto-light';
 }
 
 /*****************EMAIL DETAILS*****************/
@@ -164,15 +181,17 @@ body {
 }
 
 .email-header {
+  color: black;
   justify-content: space-between;
   align-items: center;
   padding-inline: 2rem;
   padding-top: 1rem;
   height: 3rem;
-  background-color: rgb(215, 215, 215);
   border-top-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
   border-bottom: black solid 1px;
+  background: rgb(205, 147, 147);
+  background: linear-gradient(90deg, rgba(205, 147, 147, 1) 0%, rgba(235, 235, 235, 1) 0%, rgba(215, 215, 215, 1) 0%, rgba(163, 163, 163, 1) 100%, rgba(255, 255, 255, 1) 100%);
 }
 
 .email-details-backBtn {
@@ -203,6 +222,7 @@ body {
   border: none;
   position: absolute;
   right: 0;
+  top: 12rem;
   font-size: 20px;
   opacity: 0.85;
   transition: all 0.3s;
