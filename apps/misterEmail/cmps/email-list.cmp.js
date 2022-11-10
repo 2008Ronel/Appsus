@@ -3,17 +3,14 @@ import emailPreview from './email-preview.cmp.js'
 export default {
     props: ['emails'],
     template: `
-        <section class="email-actions">
-            <button class="composeBtn">Compose</button>
-        </section>
         <section v-if="emails" class="email-list">
         <h3 class="read-messages">Read messages: {{isRead}}</h3>
             <ul>
-                <li v-for="email in emails" :key="email.id" class="emailDiv">
+                <li v-for="email in emails" :key="email.id" class="emailDiv flex-box">
                     <email-preview :email="email"/>
                     <section class="actions">
-                        <button @click="remove(email.id)">x</button> 
-                        <router-link :to="'/misterEmail/'+email.id"><button>Show Email</button></router-link>
+                        <router-link :to="'/misterEmail/'+email.id"><button>📁</button></router-link>
+                        <button @click="remove(email.id)">🗑️</button> 
                     </section> 
                 </li>
             </ul>
@@ -33,6 +30,9 @@ export default {
         }
     },
     methods: {
+        remove(emailId){
+            this.$emit('remove',emailId)
+        }
     },
     components: {
       emailPreview 

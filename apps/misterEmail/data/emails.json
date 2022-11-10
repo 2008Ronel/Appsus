@@ -4,7 +4,7 @@
      "sender":"Ronel",
      "subject": "Ronel invited you to 2008Ronel/Appsus",
       "body": "You can accept or decline this invitation. You can also head over to check out the repository or visit Ronel to learn a bit more about them.This invitation will expire in 7 days.", 
-      "isRead": "false",
+      "isRead": false,
       "sentAt" : 1551133930594,
       "from": "Ronel@gmail.com", 
       "to": "user@appsus.com"
@@ -114,7 +114,7 @@
      "sender":"Duolingo",
      "subject": "Duo here! Time for a quick lesson?",
       "body": "Daily Spanish Reminder- Hi! Keep Duo happy! Remember that learning a language requires a little bit of practice every day.", 
-      "isRead": true,
+      "isRead": false,
       "sentAt" : 1551133930594,
       "from": "hello@duolingo.com", 
       "to": "user@appsus.com"
