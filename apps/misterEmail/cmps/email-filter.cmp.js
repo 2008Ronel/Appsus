@@ -1,7 +1,7 @@
 export default {
   template: `
           <input type="search" placeholder="Search inbox" class="email-search"/>
-          <button class="composeBtn flex-box">Compose <img src='../Appsus/assets/img/email_compose_pen.png'/></button>
+          <button class="composeBtn flex-box">Compose <img class="composePic" src='../Appsus/assets/img/email_compose_pen.png'/></button>
           
       <section>
       <button class="hamburger-btn">☰</button>
