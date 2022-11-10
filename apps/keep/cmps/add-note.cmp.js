@@ -1,37 +1,42 @@
 import { noteService } from '../note-service.js';
 
-export default {
-  template: `
-<section>
-    
-    
-    <!-- <component></component> -->
-    
-    
-    <form @submit.prevent="addNote" class="add-note flex center">
-        <input v-model="noteToEdit.info.txt" type="type"/>
-        <button>submit</button>
+<template>
+    <div class="new-note-creator">
+        <label>Priority <br>
+            <select class="priority" v-model="note.priorityLevel">
+                <option disabled value="">Choose note priority</option>
+                <option value="-1">Low</option>
+                <option value="0">Normal</option>
+                <option value="1">High</option>
+            </select>
+        </label>
 
-    </form>
+        <label>Note Title
+            <input v-model="note.title" type="text" maxlength="30">
+        </label>
+
+        <label> Note Description
+            <textarea v-model="note.description" maxlength="50"></textarea>
+        </label>
+
+        {/* <button class="btn btnPrimary" @click="addNewNote">Create New Note</button> */}
 
 
-</section>
-`,
-  data() {
-    return {
-      noteToEdit: noteService.getEmptyNote(),
-    };
-  },
-  created() {
-    console.log(this.noteToEdit);
-  },
-  methods: {
-    addNote() {
-      const note = JSON.parse(JSON.stringify(this.noteToEdit));
-      this.$emit('addNote', note);
-      this.noteToEdit = noteService.getEmptyNote();
-    },
-  },
-  computed: {},
-  components: {},
-};
+
+    export default {
+        name: "NewNoteCreator",
+        props: {
+            note: {
+                type: Object,
+                required: true
+            }
+        },
+        methods: {
+            addNewNote() {
+                this.$emit('addNote', this.note)
+            }
+        }
+    }
+
+
+
