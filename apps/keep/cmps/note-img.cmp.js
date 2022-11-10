@@ -3,8 +3,7 @@ export default {
   template: `
       <section class="images">
       <img :src="keep.info.img"/>
-      
-  
+
       </section>
     
     `,

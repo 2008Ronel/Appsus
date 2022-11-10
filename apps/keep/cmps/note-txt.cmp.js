@@ -1,8 +1,9 @@
 export default {
   props: ['keep'],
   template: `
-      <section>
-      <h1>Text: {{keep.info.txt}}</h1>
+      <section class= "txt">
+  
+<pre>{{keep.info.txt}}</pre>
 
       </section>
 

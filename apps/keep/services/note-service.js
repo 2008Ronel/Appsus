@@ -10,6 +10,7 @@ export const noteService = {
   removeKeep,
   updateKeep,
   _createKeep,
+  getEmptyNote,
   //   remove,
 };
 
@@ -37,6 +38,17 @@ function _createKeep() {
     }
     return keeps;
   });
+}
+
+function getEmptyNote(type = 'note-txt') {
+  return {
+    id: '',
+    type,
+    isPinned: false,
+    info: {
+      txt: '',
+    },
+  };
 }
 
 // function deleteKeep(idx) {

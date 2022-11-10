@@ -1,10 +1,9 @@
 export default {
   props: ['keep'],
   template: `
-    <section>
-    <h1>Label: {{keep.info.label}}</h1>
-    <h1>TODO: {{keep.info.todos}}</h1>
-
+    <section class="todo">
+    <pre>{{keep.info.label}}</pre>
+    <h1>TODO: {{keep.info.todos}}</h1> 
     </section>
   
   `,
