@@ -9,8 +9,9 @@ export default {
   template: `
         <section  v-if="keeps" class="keep-app">
         <h1 class='pageTitle'>Notes</h1>
-            <noteList
-            :keeps = "keeps"/>
+            <note-List
+            :keeps = "keeps"
+            @remove="removeKeep"/>
         </section>
     `,
   data() {
@@ -28,6 +29,15 @@ export default {
         this.keeps = keeps;
       });
   },
+  methods: {
+    remove(keepId) {
+      noteService.removeKeep(keepId).then(() => {
+        const idx = this.cars.findIndex((keep) => keep.id === keepId);
+        this.keep.splice(idx, 1);
+      });
+    },
+  },
+
   components: {
     noteList,
     noteFilter,
