@@ -1,22 +1,35 @@
 export default {
-  template: `
-          <input type="search" placeholder="Search inbox" class="email-search"/>
-          <button class="composeBtn flex-box">Compose <img class="composePic" src='../Appsus/assets/img/email_compose_pen.png'/></button>
-          
+  template: `   
+    <input type="search" placeholder="Search inbox" class="email-search"/>
+      <button @click="emitSendRequest" class="composeBtn flex-box">Compose <img class="composePic" src='../Appsus/assets/img/email_compose_pen.png'/></button>  
       <section>
-      <button class="hamburger-btn">☰</button>
-        <div class="email-all-filters flex-box">
-          <button>All Mail</button>
-          <button>Sent</button>
-          <button>Starred</button>
-          <button>Read Messages</button>
-          <button>Unread Messages</button>
+      <button  @click="isOpenMenu=!isOpenMenu" class="hamburger-btn">☰</button>
+        <div  v-if="isOpenMenu" class="email-all-filters flex-box">
+          <button @click = "emitStatus('inbox')">Inbox</button>
+          <button @click = "emitStatus('sent')">Sent</button>
+          <button @click = "emitStatus('trash')">Trash</button>
+          <button @click = "emitStatus('starred')">Starred</button>
+          <button @click = "emitStatus('read')">Read Messages</button>
+          <button @click = "emitStatus('unread')">Unread Messages</button>
         </div>
       </section>
   `
   , created() {
 
+  },
+  data(){
+    return{
+      isOpenMenu:false
+    }
   }
   , computed: {
   },
+  methods:{
+    emitStatus(status){
+      this.$emit('emitStatus',status)
+    },
+    emitSendRequest(){
+      this.$emit('emitSendRequest')
+    }
+  }
 }
