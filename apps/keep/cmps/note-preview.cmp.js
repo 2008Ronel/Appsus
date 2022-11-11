@@ -3,23 +3,34 @@ import noteTxt from './note-txt.cmp.js';
 import noteImg from './note-img.cmp.js';
 
 import noteCrudl from './note-crudl.cmp.js';
+// import addText from './add-text.cmp.js';
 
 export default {
   props: ['keep'],
   template: `
-  <section v-if="keep.type === 'note-todos'" >
-    <noteTodo :keep="keep"/>
+
+
+  <!-- <section>
+<form>
+<input v-model="keep.info.txt" :type="search" placeholder="text..."/>
+
+</form>
+</section> -->
+
+  <section  v-if="keep.type === 'note-todos'" >
+    <noteTodo :style="style" :keep="keep"/>
   </section>
 
-  <section v-else-if="keep.type === 'note-txt'">
-  <noteTxt :keep="keep"/>
+  <section   v-else-if="keep.type === 'note-txt'">
+  <noteTxt :style="style"  :keep="keep"/>
   
   
 </section>
 
-  <section v-else-if="keep.type === 'note-img'">
-    <noteImg :keep="keep"/>
+  <section @click="changeColor()"  v-else-if="keep.type === 'note-img'">
+    <noteImg  :style="style" :keep="keep"/>
   </section>
+  <input type="color" @change="changeColor()"  v-model="color"  class= "color"/>
 
   <note-crudl 
               @remove="removeKeep"/>
@@ -29,25 +40,25 @@ export default {
 
   data() {
     return {};
-    // return {
-    //   index: {
-    //     'note-txt': this.renderText,
-    //     'note-img': this.renderImg,
-    //     'note-todos': this.renderTodo,
-    //   },
-    // };
   },
-  methods: {
-    removeKeep() {
-      this.$emit('remove', this.note.id);
+
+  computed: {
+    style() {
+      return 'background-color: ' + this.keep?.color;
     },
   },
-  methods: {},
+
+  methods: {
+    changeColor(event) {
+      this.keep.color = this.color;
+    },
+  },
 
   components: {
     noteTodo,
     noteTxt,
     noteImg,
     noteCrudl,
+    // addText,
   },
 };

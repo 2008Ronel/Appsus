@@ -3,6 +3,7 @@
     "id": "n101",
     "type": "note-txt",
     "isPinned": true,
+    "color": "#000",
     "info": {
       "txt": "Fullstack Me Baby!"
     }
@@ -11,6 +12,7 @@
     "id": "n1012",
     "type": "note-txt",
     "isPinned": true,
+    "color": "#000",
     "info": {
       "txt": "dsdsazdsadsaz!"
     }
@@ -18,17 +20,17 @@
   {
     "id": "n102",
     "type": "note-img",
+    "color": "#000",
     "info": {
       "img": "https://www.billboard.com/wp-content/uploads/2021/08/Billie-Eilish-Happier-than-Ever-A-Love-Letter-to-Los-Angeles-Press-2021-billboard-1548-1629900793.jpg?w=1024",
       "title": "Bobi and Me"
     },
-    "style": {
-      "backgroundColor": "#00d"
-    }
+    "style": {}
   },
   {
     "id": "n103",
     "type": "note-todos",
+    "color": "#00d",
     "info": {
       "label": "Get my stuff together",
       "todos": [
