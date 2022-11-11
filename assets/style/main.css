@@ -25,5 +25,34 @@ li {
 }
 
 img {
-  width: 250px;
+  min-width: 100%;
+  padding: 20px;
+}
+
+.keeps-list {
+  display: flex;
+  justify-content: center;
+}
+
+.txt,
+.todo,
+.images {
+  background-color: aliceblue;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  margin-right: 20px;
+  padding: 20px;
+}
+
+.txt {
+  background-color: rgb(248, 30, 30);
+}
+
+.todo {
+  background-color: rgb(243, 243, 131);
+}
+
+.images {
+  background-color: rgb(239, 143, 226);
 }

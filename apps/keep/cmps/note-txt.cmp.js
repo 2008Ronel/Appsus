@@ -1,8 +1,9 @@
 export default {
   props: ['keep'],
   template: `
-      <section>
-      <h1>Text: {{keep.info.txt}}</h1>
+      <section class= "txt">
+  
+<pre>{{keep.info.txt}}</pre>
 
       </section>
 
@@ -10,6 +11,12 @@ export default {
 
   data() {
     return {};
+  },
+
+  methods: {
+    removeKeep() {
+      this.$emit('remove', this.keep.id);
+    },
   },
 
   components: {},

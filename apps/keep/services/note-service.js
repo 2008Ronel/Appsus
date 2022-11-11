@@ -10,7 +10,8 @@ export const noteService = {
   removeKeep,
   updateKeep,
   _createKeep,
-  //   remove,
+  getEmptyNote,
+  // remove,
 };
 
 function query() {
@@ -23,10 +24,12 @@ function updateKeep(newKeep) {
 }
 
 function removeKeep(keepId) {
-  const keeps = query();
-  const idx = keeps.findIndex((keep) => keep.id === keepId);
-  keeps.splice(idx, 1);
-  storageService.post(KEEPS_KEY, keeps);
+  const keep = query().then((keeps) => {
+    const idx = keeps.findIndex((keep) => keep.id === keepId);
+    keeps.splice(idx, 1);
+    storageService.post(KEEPS_KEY, keeps);
+    return keeps;
+  });
 }
 
 function _createKeep() {
@@ -37,6 +40,17 @@ function _createKeep() {
     }
     return keeps;
   });
+}
+
+function getEmptyNote(type = 'note-txt') {
+  return {
+    id: '',
+    type,
+    isPinned: false,
+    info: {
+      txt: '',
+    },
+  };
 }
 
 // function deleteKeep(idx) {

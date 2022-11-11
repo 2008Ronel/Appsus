@@ -2,6 +2,8 @@ import noteTodo from './note-todo.cmp.js';
 import noteTxt from './note-txt.cmp.js';
 import noteImg from './note-img.cmp.js';
 
+import noteCrudl from './note-crudl.cmp.js';
+
 export default {
   props: ['keep'],
   template: `
@@ -18,6 +20,11 @@ export default {
   <section v-else-if="keep.type === 'note-img'">
     <noteImg :keep="keep"/>
   </section>
+
+  <note-crudl 
+              @remove="removeKeep"/>
+    </section>
+
 `,
 
   data() {
@@ -30,11 +37,17 @@ export default {
     //   },
     // };
   },
-
+  methods: {
+    removeKeep() {
+      this.$emit('remove', this.note.id);
+    },
+  },
   methods: {},
+
   components: {
     noteTodo,
     noteTxt,
     noteImg,
+    noteCrudl,
   },
 };

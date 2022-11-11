@@ -8,6 +8,14 @@
     }
   },
   {
+    "id": "n1012",
+    "type": "note-txt",
+    "isPinned": true,
+    "info": {
+      "txt": "dsdsazdsadsaz!"
+    }
+  },
+  {
     "id": "n102",
     "type": "note-img",
     "info": {
