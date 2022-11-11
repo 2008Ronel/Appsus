@@ -12,6 +12,7 @@ export default {
         @emitSendRequest = "composeEmail"
         @emitSearch="renderSearch"/>
         <email-list
+        @emitRemoveSelected ="removeSelected"
         @starEmail='starEmail'
         :emails = "emailsToShow"
         @remove="removeEmail" 
@@ -27,9 +28,9 @@ export default {
     data() {
         return {
             emails: null,
-            emailStatus:'inbox',
+            emailStatus: 'inbox',
             isFormOpen: false,
-            searchTxt:''
+            searchTxt: '',
         }
     },
     created() {
@@ -42,53 +43,62 @@ export default {
         emailForm
     },
     methods: {
-        renderSearch(emitText){
+        removeSelected(ids) {
+            ids.forEach(id => {
+                let emails = utilService.loadFromStorage('Emails')
+                let idx = emails.findIndex(email => email.id === id)
+                emails[idx].status === 'inbox'? emails[idx].status='trash': emails.splice(idx,1)
+                utilService.saveToStorage('Emails',emails)
+                this.emails=emails
+            })
+            
+        },
+        renderSearch(emitText) {
             this.searchTxt = emitText
         },
-        renderStatus(status){
+        renderStatus(status) {
             this.emailStatus = status
         },
-        starEmail(emailId){
+        starEmail(emailId) {
             let emails = utilService.loadFromStorage('Emails')
             const idx = emails.findIndex(email => email.id === emailId)
             emails[idx].isStarred ? emails[idx].isStarred = false : emails[idx].isStarred = true
-            utilService.saveToStorage('Emails',emails)
+            utilService.saveToStorage('Emails', emails)
             this.emails = emails
         },
-        addSentEmail(email){
+        addSentEmail(email) {
             emailService.save(email)
-            .then(()=> {
-               let emails= utilService.loadFromStorage('Emails')
-               this.emails = emails
-            })
+                .then(() => {
+                    let emails = utilService.loadFromStorage('Emails')
+                    this.emails = emails
+                })
         },
         removeEmail(emailId) {
             emailService.query().then(emails => {
                 const idx = emails.findIndex(email => email.id === emailId)
-                emails[idx].status !== 'trash' ? emails[idx].status = 'trash' : emails.splice(idx,1)
+                emails[idx].status !== 'trash' ? emails[idx].status = 'trash' : emails.splice(idx, 1)
                 this.emails = emails
-                utilService.saveToStorage('Emails',this.emails)
+                utilService.saveToStorage('Emails', this.emails)
             })
         },
-        composeEmail(){
+        composeEmail() {
             this.isFormOpen = true
-        }
-
+        },
     },
-    computed:{
+    computed: {
         emailsToShow() {
             let emailArr = this.emails
-            if(this.emailStatus==='inbox'||this.emailStatus==='trash'||this.emailStatus==='sent') 
-            emailArr = this.emails.filter ( email => this.emailStatus === email.status )
-            else if(this.emailStatus==='starred') emailArr = this.emails.filter ( email => email.isStarred === true )
-            else if(this.emailStatus==='read') emailArr = this.emails.filter ( email => {
+            if (this.emailStatus === 'inbox' || this.emailStatus === 'trash' || this.emailStatus === 'sent')
+                emailArr = this.emails.filter(email => this.emailStatus === email.status)
+            else if (this.emailStatus === 'starred') emailArr = this.emails.filter(email => email.isStarred === true)
+            else if (this.emailStatus === 'read') emailArr = this.emails.filter(email => {
                 return (email.isRead === true && email.status != 'sent' && email.status != 'trash')
-            } )
-            else if(this.emailStatus==='unread') emailArr = this.emails.filter ( email =>  {
-                return (email.isRead === false && email.status != 'sent' && email.status != 'trash')})
+            })
+            else if (this.emailStatus === 'unread') emailArr = this.emails.filter(email => {
+                return (email.isRead === false && email.status != 'sent' && email.status != 'trash')
+            })
             const regex = new RegExp(this.searchTxt, 'i')
-            return emailArr.filter(email => regex.test(email.sender&&email.subject&&email.body))
-            // .filter(book => regex.test(book.title))
-          }
+            return emailArr.filter(email => regex.test(email.sender && email.subject && email.body))
+        }
     }
 }
