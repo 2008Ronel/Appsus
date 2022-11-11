@@ -9,7 +9,8 @@ export default {
         <div class="email-layout">
         <email-filter         
         @emitStatus = "renderStatus"
-        @emitSendRequest = "composeEmail"/>
+        @emitSendRequest = "composeEmail"
+        @emitSearch="renderSearch"/>
         <email-list
         @starEmail='starEmail'
         :emails = "emailsToShow"
@@ -27,7 +28,8 @@ export default {
         return {
             emails: null,
             emailStatus:'inbox',
-            isFormOpen: false
+            isFormOpen: false,
+            searchTxt:''
         }
     },
     created() {
@@ -40,6 +42,9 @@ export default {
         emailForm
     },
     methods: {
+        renderSearch(emitText){
+            this.searchTxt = emitText
+        },
         renderStatus(status){
             this.emailStatus = status
         },
@@ -81,8 +86,8 @@ export default {
             } )
             else if(this.emailStatus==='unread') emailArr = this.emails.filter ( email =>  {
                 return (email.isRead === false && email.status != 'sent' && email.status != 'trash')})
-            // const regex = new RegExp(this.filterBy.title, 'i')
-            return emailArr
+            const regex = new RegExp(this.searchTxt, 'i')
+            return emailArr.filter(email => regex.test(email.sender&&email.subject&&email.body))
             // .filter(book => regex.test(book.title))
           }
     }

@@ -9,8 +9,8 @@ export default {
                 <li v-for="email in emails" :key="email.id" class="emailDiv flex-box">
                     <email-preview @starEmail='starEmail' :email="email"/>
                     <section class="actions">
-                        <router-link :to="'/misterEmail/'+email.id"><button>📁</button></router-link>
-                        <button @click="remove(email.id)">🗑️</button> 
+                        <router-link :to="'/misterEmail/'+email.id"><img src="../Appsus/assets/img/openMail.png"></router-link>
+                        <button><img src="../Appsus/assets/img/deleteIcon.png"  @click="remove(email.id)" class="deleteIcon"></button> 
                     </section> 
                 </li>
             </ul>
