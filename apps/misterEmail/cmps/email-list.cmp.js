@@ -5,7 +5,10 @@ export default {
     template: `
         <section v-if="emails" class="email-list">
         <h3 class="read-messages">You have <span @click = "$emit('emitStatus','read')" class="isReadStat" title="View read">{{isRead}}</span> read messages</h3>
+        <div class="checkBoxBtns">
         <span v-if="showRemoveBtn" class="checkboxRemove" @click="emitRemoveSelected">Remove emails</span>
+        <span v-if="showRemoveBtn" class="checkboxRead" @click="emitReadSelected">Change Read</span>
+        </div>
             <ul>
                 <li v-for="email in emails" :key="email.id" class="emailDiv flex-box">
                     <input type="checkbox" v-model="isChecked" :value="email.id" @click="console()" />
@@ -34,16 +37,18 @@ export default {
         }
     },
     methods: {
+        emitReadSelected(){
+            this.$emit('emitReadSelected',this.isChecked)
+            this.isChecked = []
+            this.showRemoveBtn = false
+        },
         emitRemoveSelected(){
             this.$emit('emitRemoveSelected',this.isChecked)
             this.isChecked = []
             this.showRemoveBtn = false
         },
         console() {
-            setTimeout(() => {
-                this.isChecked.forEach(item => console.log(item))
-                this.isChecked.length ? this.showRemoveBtn = true : this.showRemoveBtn = false
-            }, 1);
+            setTimeout(() => {this.isChecked.length ? this.showRemoveBtn = true : this.showRemoveBtn = false}, 1);
         },
         starEmail(emailId) {
             this.$emit('starEmail', emailId)

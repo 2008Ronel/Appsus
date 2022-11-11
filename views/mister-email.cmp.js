@@ -12,6 +12,7 @@ export default {
         @emitSendRequest = "composeEmail"
         @emitSearch="renderSearch"/>
         <email-list
+        @emitReadSelected = "ChangeSelectedRead"
         @emitRemoveSelected ="removeSelected"
         @starEmail='starEmail'
         :emails = "emailsToShow"
@@ -43,6 +44,15 @@ export default {
         emailForm
     },
     methods: {
+        ChangeSelectedRead(ids){
+            ids.forEach(id => {
+                let emails = utilService.loadFromStorage('Emails')
+                let idx = emails.findIndex(email => email.id === id)
+                emails[idx].isRead ? emails[idx].isRead = false: emails[idx].isRead = true
+                utilService.saveToStorage('Emails',emails)
+                this.emails=emails
+            })
+        },
         removeSelected(ids) {
             ids.forEach(id => {
                 let emails = utilService.loadFromStorage('Emails')
@@ -51,7 +61,7 @@ export default {
                 utilService.saveToStorage('Emails',emails)
                 this.emails=emails
             })
-            
+
         },
         renderSearch(emitText) {
             this.searchTxt = emitText

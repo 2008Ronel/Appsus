@@ -230,9 +230,23 @@ body {
 
 /*********************EMAIL ACTIONS***************************/
 .checkboxRemove{
+  padding: 0.5rem 1rem;
+  background-color: #3d75cf;
+  border-radius: 0.4rem;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.checkBoxBtns{
+  display: flex;
+  gap: 5px;
   position: absolute;
-  top: 14rem;
-  left: 4rem;
+  top:15rem;
+  left:4.7%;
+}
+
+.checkboxRead{
   padding: 0.5rem 1rem;
   background-color: #3d75cf;
   border-radius: 0.4rem;
@@ -435,7 +449,7 @@ body {
   .read-messages {
     position: absolute;
     top: 16rem;
-    right: 50%;
+    right: 15%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
