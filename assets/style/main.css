@@ -17,8 +17,6 @@
 @import 'apps/mail/email-app.css';
 @import 'apps/note/note-app.css';
 
-
-
 li {
   list-style: none;
 }
@@ -36,7 +34,7 @@ img {
 .txt,
 .todo,
 .images {
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
   width: 200px;
   height: 200px;
   text-align: center;
@@ -44,14 +42,11 @@ img {
   padding: 20px;
 }
 
-.txt {
-  background-color: rgb(248, 30, 30);
+.color {
+  margin-left: 10px;
 }
 
-.todo {
-  background-color: rgb(243, 243, 131);
-}
-
-.images {
-  background-color: rgb(239, 143, 226);
+.todos {
+  display: flex;
+  flex-direction: column;
 }

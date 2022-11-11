@@ -4,16 +4,20 @@ export default {
   template: `
     <section>
         <div class="keeps-list">
-            <div v-for="keep in keeps" :key="keep.id" class="keep">
-              <keep-preview :keep="keep"/>
-              <button @click="removeKeep">x</button>
+          <div v-for="keep in keeps" :key="keep.id" class="keep">
+            <keep-preview :keep="keep"/>
+            <button @click="removeKeep">x</button>
+              <!-- <input type="color" @change="changeColor()"  v-model="color"  class= "color"/> -->
+
 
 </div>
 </div>
     </section>
 `,
   data() {
-    return {};
+    return {
+      color: '',
+    };
   },
   methods: {
     removeKeep(keepId) {
@@ -21,6 +25,11 @@ export default {
       // console.log('aaa');
       // console.log(keepId);
     },
+
+    changeColor(event) {
+      console.log('e', this.color);
+    },
+    // changeColor(keepId)
   },
 
   computed: {},
