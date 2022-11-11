@@ -6,7 +6,7 @@ import { utilService } from '../services/util.service.js'
 export default {
     template: `
         <section  v-if="emails" class="email-app">
-        <h1 class='pageTitle'>Jmail</h1>
+        <div class="email-layout">
         <email-filter         
         @emitStatus = "renderStatus"
         @emitSendRequest = "composeEmail"/>
@@ -14,10 +14,13 @@ export default {
         @starEmail='starEmail'
         :emails = "emailsToShow"
         @remove="removeEmail" 
+        @emitStatus = "renderStatus"
         />
+        </div>
         <email-form
         v-if="isFormOpen"
-        @closeForm="isFormOpen=!isFormOpen"/>
+        @closeForm="isFormOpen=!isFormOpen"
+        @emitForm = "addSentEmail"/>
         </section>
     `,
     data() {
@@ -47,6 +50,13 @@ export default {
             utilService.saveToStorage('Emails',emails)
             this.emails = emails
         },
+        addSentEmail(email){
+            emailService.save(email)
+            .then(()=> {
+               let emails= utilService.loadFromStorage('Emails')
+               this.emails = emails
+            })
+        },
         removeEmail(emailId) {
             emailService.query().then(emails => {
                 const idx = emails.findIndex(email => email.id === emailId)
@@ -63,11 +73,14 @@ export default {
     computed:{
         emailsToShow() {
             let emailArr = this.emails
-            if(this.emailStatus==='inbox'||this.emailStatus==='trash'|| this.emailStatus==='sent') 
+            if(this.emailStatus==='inbox'||this.emailStatus==='trash'||this.emailStatus==='sent') 
             emailArr = this.emails.filter ( email => this.emailStatus === email.status )
             else if(this.emailStatus==='starred') emailArr = this.emails.filter ( email => email.isStarred === true )
-            else if(this.emailStatus==='read') emailArr = this.emails.filter ( email => email.isRead === true )
-            else if(this.emailStatus==='unread') emailArr = this.emails.filter ( email => email.isRead === false)
+            else if(this.emailStatus==='read') emailArr = this.emails.filter ( email => {
+                return (email.isRead === true && email.status != 'sent' && email.status != 'trash')
+            } )
+            else if(this.emailStatus==='unread') emailArr = this.emails.filter ( email =>  {
+                return (email.isRead === false && email.status != 'sent' && email.status != 'trash')})
             // const regex = new RegExp(this.filterBy.title, 'i')
             return emailArr
             // .filter(book => regex.test(book.title))

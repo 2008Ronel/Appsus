@@ -10,12 +10,12 @@ body {
   letter-spacing: 0.3px;
 }
 
-
 *:focus {
   outline: none;
 }
 
 /****************HELPERS************************/
+
 .flex-box {
   display: flex;
 }
@@ -32,6 +32,21 @@ body {
 }
 
 /*****************EMAIL LIST*****************/
+
+.isReadStat{
+  color: #3d75cf;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  padding-inline: 0.2rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.2s;
+}
+
+.isReadStat:hover{
+  color: #032761;
+  opacity: 0.7;
+}
 
 .email-list {
   display: block;
@@ -52,7 +67,6 @@ body {
   transition: all 0.2s;
 }
 
-
 .email-search:hover {
   color: black;
   background-color: rgb(230, 230, 230);
@@ -61,7 +75,7 @@ body {
 .email-list ul {
   display: block;
   width: 90vw;
-  margin-top: 4rem;
+  margin-top: 7.9rem;
   margin-left: auto;
   margin-right: auto;
   padding: 0;
@@ -69,6 +83,7 @@ body {
 }
 
 /*****************EMAIL PREVIEW*****************/
+
 .read-messages {
   padding-inline-start: 10rem;
   position: absolute;
@@ -100,17 +115,6 @@ body {
   opacity: 0.6;
 }
 
-/* .email-preview {
-  cursor: pointer;
-  padding-top: 1rem;
-  padding-inline: 10px;
-  height: 40px;
-  background-color: rgb(230, 230, 230);
-  border-bottom: 1px black solid;
-  align-items: center;
-  gap: 0.8rem;
-}  */
-
 .email-preview {
   display: flex;
   gap: 10px;
@@ -129,7 +133,6 @@ body {
   text-overflow: clip;
   margin: 0;
 }
-
 
 .emailSender {
   color: rgb(51, 51, 51);
@@ -218,30 +221,52 @@ body {
 }
 
 /*********************EMAIL ACTIONS***************************/
+
 .email-all-filters {
   position: absolute;
   right: 0;
   flex-direction: column;
-  top: 15rem;
+  top: 17.32rem;
 }
 
+.appPic{
+  position: relative;
+  top: 1rem;
+  padding-inline: 0.4rem;
+}
+
+.hamburger{
+  position: absolute;
+  top: 8.7rem;
+  right: 0.3rem;
+  padding: 0px;
+  margin: 0px;
+  color: rgb(88, 88, 88);
+}
+
+.hamburger img{
+  cursor: pointer;
+}
 
 .hamburger-btn {
+  letter-spacing: 1px;
   background-color: transparent;
-  border: none;
-  position: absolute;
-  right: 0;
-  top: 12.3rem;
+  border: 1px black solid;
+  border-radius: 50%;
   font-size: 20px;
   opacity: 0.85;
-  transition: all 0.3s;
+  transition: all 0.15s;
+  background-color: rgb(220, 220, 220);
 }
 
 .hamburger-btn:hover {
   opacity: 1;
-  color:rgb(160, 160, 160) ;
-  padding: 0px;
-  margin: 0px;
+  color:rgb(90, 90, 90) ;
+  border: 1px transparent solid;
+}
+
+.emailFirstLetter{
+  font-size: 25px;
 }
 
 .hamburger-btn:focus>section {
@@ -251,8 +276,9 @@ body {
 .email-all-filters button {
   border: none;
   border-bottom: 1px solid rgb(222, 222, 222);
+  background-color: white;
   display: inline-block;
-  width: 140px;
+  width: 14.5vw;
   height: 20px;
   padding: 0;
   margin: 0;
@@ -266,21 +292,21 @@ body {
 }
 
 .composeBtn {
-  position: absolute;
   align-items: center;
-  right: 0.3rem;
+  position: absolute;
+  right: 0.5rem;
+  top: 13.3rem;
   padding: 0.8rem 2rem;
   padding-inline-start: 2.4rem;
-  top: 9.5rem;
   font-size: 14px;
   border-radius: 0.4rem;
   border: none;
-  background-color: rgb(225, 244, 247);
+  background-color: rgb(180, 224, 242);
   transition: all 0.18s;
 }
 
 .composeBtn:hover {
-  background-color: rgb(209, 240, 245);
+  background-color: rgb(193, 228, 242);
   box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.75);
   -webkit-box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.75);
@@ -310,17 +336,27 @@ body {
   color: yellow;
 }
 
+.fa-star{
+  cursor: pointer;
+}
+
+.fa-star:hover{
+  color: rgb(157, 157, 157);;
+}
 /**********************EMAIL FORM********************/
+
 .compose-form{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: white;
+  border: 1px solid rgb(217, 217, 217);
   position: fixed;
   bottom: 0rem;
   left: 10rem;
 }
+
 .compose-form input,.compose-form textarea{
   width: 500px;
 }
@@ -328,6 +364,7 @@ body {
 .compose-form input{
   height: 2rem;
 }
+
 .sendFormBtn{
   margin-left: 75.5%;
   width: 120px;
@@ -341,6 +378,7 @@ body {
   margin-bottom:3px ;
   transition: all 0.2s;
 }
+
 .sendFormBtn:hover{
   background-color: #0b57d0
 }

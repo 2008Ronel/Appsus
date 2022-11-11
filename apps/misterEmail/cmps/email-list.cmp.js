@@ -4,7 +4,7 @@ export default {
     props: ['emails'],
     template: `
         <section v-if="emails" class="email-list">
-        <h3 class="read-messages">You have {{isRead}} read messages</h3>
+        <h3 class="read-messages">You have <span @click = "$emit('emitStatus','read')" class="isReadStat" title="View read">{{isRead}}</span> read messages</h3>
             <ul>
                 <li v-for="email in emails" :key="email.id" class="emailDiv flex-box">
                     <email-preview @starEmail='starEmail' :email="email"/>
