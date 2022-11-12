@@ -7,11 +7,6 @@ import searchBar from '../cmp/search-bar.cmp.js'
 export default {
   template: `
     <section v-if="books" class="book-app">
-        <search-bar
-        v-if='results'
-        :options = 'results'
-        @update = 'updateResults'
-        />
        <h1 class='pageTitle'>Books</h1>
        <book-list 
        :books="booksToShow"
@@ -63,6 +58,5 @@ export default {
     sendMsg,
     bookFilter,
     bookList,
-    searchBar
   }
 }

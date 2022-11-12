@@ -1,8 +1,14 @@
 import bookPreview from './book-preview.cmp.js'
 import { bookService } from '../services/book-service.js'
+import searchBar from './search-bar.cmp.js'
 export default {
     props: ['books'],
     template: `
+        <search-bar
+        v-if='results'
+        :options = 'results'
+        @update = 'updateResults'
+        />
         <section class="book-list">
             <ul>
                 <li v-for="book in books" :key="book.id" class="bookDiv">
@@ -43,5 +49,6 @@ export default {
     },
     components: {
         bookPreview,
+        searchBar
     }
 }
