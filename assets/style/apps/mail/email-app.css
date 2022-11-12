@@ -442,6 +442,7 @@ body {
     transform: translate(50%, -50%);
   }
 
+
   .emailSubject {
     min-width: 120px;
     max-width: 120px;
@@ -481,6 +482,21 @@ body {
   body{
     background-color: rgb(112, 112, 112);
   }
+
+  .email-search{
+    background-color: white;
+    font-size: 14px;
+  }
+  .email-all-filters button{
+    width: 16vw;
+    font-size: 11px;
+  }
+  .isReadStat{
+    color: white;
+    text-decoration: none;
+
+  }
+
   .email-details-title{
     color: black !important;
     width: 100vw;
