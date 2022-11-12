@@ -97,12 +97,12 @@ body {
   font-size: 13px;
 }
 
-.actions {
+.emailDiv .actions {
   display: inline-block;
   opacity: 0;
   position: relative;
   right: 4rem;
-}
+} 
 
 .deleteIcon {
   position: relative;
@@ -314,7 +314,7 @@ body {
   border-bottom: 1px solid rgb(222, 222, 222);
   background-color: white;
   display: inline-block;
-  width: 14.5vw;
+  width:14.5vw;
   height: 20px;
   padding: 0;
   margin: 0;

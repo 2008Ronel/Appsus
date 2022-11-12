@@ -25,7 +25,7 @@ export default {
         @closeForm="isFormOpen=!isFormOpen"
         @emitForm = "addSentEmail"/>
         </section>
-        <h1 v-else class="loadingState"  >Loading ...</h1> 
+        <h1 v-else class="loadingState"  >Loading ...</h1>
     `,
     data() {
         return {
@@ -109,7 +109,7 @@ export default {
                 return (email.isRead === false && email.status != 'sent' && email.status != 'trash')
             })
             const regex = new RegExp(this.searchTxt, 'i')
-            return emailArr.filter(email => regex.test(email.sender && email.subject && email.body))
+            return emailArr.filter(email => regex.test (email.sender))
         }
     }
 }
