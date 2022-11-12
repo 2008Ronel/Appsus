@@ -13,7 +13,7 @@ li {
   list-style: none;
 }
 
-img {
+.keep-app img {
   min-width: 100%;
   padding: 20px;
 }
@@ -31,4 +31,4 @@ img {
   text-align: center;
   margin-right: 20px;
   padding: 20px;
-}
+} 
