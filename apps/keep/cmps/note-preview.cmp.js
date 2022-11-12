@@ -3,19 +3,13 @@ import noteTxt from './note-txt.cmp.js';
 import noteImg from './note-img.cmp.js';
 
 import noteCrudl from './note-crudl.cmp.js';
-// import addText from './add-text.cmp.js';
 
 export default {
   props: ['keep'],
   template: `
 
 
-  <!-- <section>
-<form>
-<input v-model="keep.info.txt" :type="search" placeholder="text..."/>
 
-</form>
-</section> -->
 
   <section  v-if="keep.type === 'note-todos'" >
     <noteTodo :style="style" :keep="keep"/>

@@ -1,0 +1,34 @@
+@import 'apps/note/note-app.css';
+@import '/apps/keep/cmps/add-note.cmp.js';
+@import '/apps/keep/cmps/note-crudl.cmp.js';
+@import '/apps/keep/cmps/note-filter.cmp.js';
+@import '/apps/keep/cmps/note-img.cmp.js';
+@import '/apps/keep/cmps/note-list.cmp.js';
+@import '/apps/keep/cmps/note-preview.cmp.js';
+@import '/apps/keep/cmps/note-todo.cmp.js';
+@import '/apps/keep/cmps/note-txt.cmp.js';
+@import '/apps/Ex/js/views/book-app.cmp.js';
+
+li {
+  list-style: none;
+}
+
+img {
+  min-width: 100%;
+  padding: 20px;
+}
+
+.keeps-list {
+  display: flex;
+  justify-content: center;
+}
+
+.txt,
+.todo,
+.images {
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  margin-right: 20px;
+  padding: 20px;
+}
