@@ -6,8 +6,8 @@ export default {
         <section v-if="emails" class="email-list">
         <h3 class="read-messages">You have <span @click = "$emit('emitStatus','read')" class="isReadStat" title="View read">{{isRead}}</span> read messages</h3>
         <div class="checkBoxBtns">
-        <span v-if="showRemoveBtn" class="checkboxRemove" @click="emitRemoveSelected">Remove emails</span>
-        <span v-if="showRemoveBtn" class="checkboxRead" @click="emitReadSelected">Change Read</span>
+        <span v-if="showRemoveBtn" class="checkboxRemove" @click="emitRemoveSelected">Remove</span>
+        <span v-if="showRemoveBtn" class="checkboxRead" @click="emitReadSelected">Revert read</span>
         </div>
             <ul>
                 <li v-for="email in emails" :key="email.id" class="emailDiv flex-box">
@@ -20,7 +20,6 @@ export default {
                 </li>
             </ul>
         </section> 
-        <h1 v-else class="loadingState"  >Loading ...</h1> 
     `,
     created() {
     },

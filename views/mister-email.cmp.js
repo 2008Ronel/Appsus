@@ -25,6 +25,7 @@ export default {
         @closeForm="isFormOpen=!isFormOpen"
         @emitForm = "addSentEmail"/>
         </section>
+        <h1 v-else class="loadingState"  >Loading ...</h1> 
     `,
     data() {
         return {

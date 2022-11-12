@@ -22,12 +22,13 @@ body {
 
 .loadingState {
   position: absolute;
+  color: black;
   top: 50%;
   right: 50%;
   transform: translate(50%, -50%);
   background-color: white;
   padding: 10px 20px;
-  border: 1px black solid;
+  border: none;
   border-radius: 1rem;
 }
 
@@ -56,7 +57,7 @@ body {
   padding-inline-start: 1rem;
   position: absolute;
   top: 10rem;
-  right: 15%;
+  right: 14.5%;
   height: 2.3rem;
   width: 450px;
   border: none;
@@ -76,6 +77,8 @@ body {
 .email-list ul {
   display: block;
   width: 90vw;
+  position: relative;
+  right: 19px;
   margin-top: 7.9rem;
   margin-left: auto;
   margin-right: auto;
@@ -316,6 +319,7 @@ body {
   padding: 0;
   margin: 0;
   transition: all 0.2s;
+  z-index: 1;
 }
 
 .email-all-filters button:hover {
@@ -439,6 +443,14 @@ body {
   }
 
   .emailSubject {
+    min-width: 120px;
+    max-width: 120px;
+    font-family: 'roboto-light';
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .emailSender {
     min-width: 120px;
     max-width: 120px;
     font-family: 'roboto-light';
