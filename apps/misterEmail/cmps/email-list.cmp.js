@@ -14,8 +14,8 @@ export default {
                     <input type="checkbox" v-model="isChecked" :value="email.id" @click="console()" />
                     <email-preview @starEmail='starEmail' :email="email" v-model="isChecked"/>
                     <section class="actions">
-                        <router-link :to="'/misterEmail/'+email.id"><img src="../Appsus/assets/img/openMail.png"></router-link>
-                        <button><img src="../Appsus/assets/img/deleteIcon.png"  @click="remove(email.id)" class="deleteIcon"></button> 
+                        <router-link :to="'/misterEmail/'+email.id"><img src="../Appsus/assets/img/openMail.png" class="openMailIcon"></router-link>
+                        <button class="deleteIcon"><img src="../Appsus/assets/img/deleteIcon.png"  @click="remove(email.id)" ></button> 
                     </section> 
                 </li>
             </ul>

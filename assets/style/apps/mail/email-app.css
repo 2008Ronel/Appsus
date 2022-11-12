@@ -461,7 +461,7 @@ body {
   .read-messages {
     position: absolute;
     top: 16rem;
-    right: 15%;
+    left: -5%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -475,4 +475,101 @@ body {
     padding-block: 0px;
     font-size: 12px;
   }
+}
+
+@media (max-width:865px) {
+  body{
+    background-color: rgb(112, 112, 112);
+  }
+  .email-details-title{
+    color: black !important;
+    width: 100vw;
+    text-align: center;
+    font-size: 19px;
+
+  }
+  .email-details{
+    width: 100vw;
+  }
+
+
+  .emailDiv .actions{
+   opacity: 0.8; 
+  }
+
+  .email-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    width: 80vw;
+    padding-block: 0;
+    padding-inline-start: 1rem;
+    padding-inline-end: 4rem;
+    border-bottom: 1px solid rgb(210, 210, 210);
+  }
+
+  .email-search {
+    top: 13.2rem;
+    left: -4rem;
+    transform: translate(50%, -50%);
+    width: 50vw;
+  }
+
+  .emailSender {
+    color: rgb(51, 51, 51);
+    padding-top: 0.2rem;
+    font-size: 15px;
+    min-width: 70vw;
+    max-width: 70vw;
+  }
+
+  .email-all-filters button{
+    height: 48.73px;
+  }
+
+  .emailSubject {
+    min-width: 70vw;
+    max-width: 70vw;
+  }
+  
+  .email-preview {
+    font-size: 12px;
+    width: 75vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: rgb(112, 112, 112) !important;
+    border: none;
+    color: rgb(210, 210, 210) !important;
+  }
+
+  .emailSender{
+    color: rgb(210, 210, 210) !important;
+  }
+
+  .read-messages{
+    top: 10rem;
+  }
+}
+@media (max-width:570px){
+
+.fa-star{
+  align-self: flex-end;
+  position: relative;
+  left: 3rem;
+  top: 2rem;
+}
+
+.actions .openMailIcon{
+  display: inline-block;
+  position: relative;
+  top: 1rem;
+  right: 0.1rem;
+}
+
+.actions .deleteIcon{
+  display: inline;
+  position: relative;
+  right: 1rem;
+}
 }
