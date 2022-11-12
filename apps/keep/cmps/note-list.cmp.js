@@ -7,7 +7,6 @@ export default {
           <div v-for="keep in keeps" :key="keep.id" class="keep">
             <keep-preview :keep="keep"/>
             <button @click="removeKeep">x</button>
-              <!-- <input type="color" @change="changeColor()"  v-model="color"  class= "color"/> -->
 
 
 </div>
@@ -22,14 +21,11 @@ export default {
   methods: {
     removeKeep(keepId) {
       this.$emit('remove', keepId);
-      // console.log('aaa');
-      // console.log(keepId);
     },
 
     changeColor(event) {
       console.log('e', this.color);
     },
-    // changeColor(keepId)
   },
 
   computed: {},
